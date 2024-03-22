@@ -25,23 +25,22 @@
         </div>
         <select name="category" id="category">
           <option value="Food" selected>Food</option>
-          <option value="Tools">Tools</option>
-          <option value="Phons">Phons</option>
+          <option value="Tool">Tools</option>
+          <option value="Phone">Phons</option>
         </select>
         <span class="total">Total</span>
-        <input type="submit" id="add" value="ADD" />
+        <input type="submit" id="add" value="Add" />
+        <button id="close">X</button>
       </div>
-
       <div class="filter">
         <input
           type="text"
           name="search"
           placeholder="Search For Product Name"
         />
-        <button class="active">Search For Product Name</button>
-        <button class="">Search For Product Category</button>
+        <button class="active" id="product">Search For Product Name</button>
+        <button class="" id="category">Search For Product Category</button>
       </div>
-
       <table class="output">
         <thead>
           <tr>
@@ -58,7 +57,6 @@
         </tbody>
       </table>
     </main>
-
     <!-- =-=-=-= Javascript File =-=-=-= -->
     <script src="script.js"></script>
   </body>
