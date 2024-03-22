@@ -1,20 +1,7 @@
 /* Global */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
-  /* === Box model === */
-  --pad-marg: 22px;
-  --pad-margB: 22px 0;
-  --pad-margR: 0 22px;
-  --pad-margX2\1: 33px;
-  --pad-margBX2\1: 33px 0;
-  --pad-margRX2\1: 0 33px;
-  --pad-margX2: 44px;
-  --pad-margBX2: 44px 0;
-  --pad-margRX2: 0 44px;
-
-  /* === Irregular Colors === */
   --primary-color: #639efffa;
-  --info-color: #17a2b8;
   --success-color: #28a745;
   --warning-color: #ffc107;
   --danger-color: #dc3545;
@@ -25,14 +12,9 @@
   /* === Regular Colors */
   --white-color: #fff;
   --black-color: #000;
-  --light-color: #ddd;
-  --gray-color: #777;
-  --dark-gray-color: #333;
-
   /* === Transition === */
   --transition-3: all 0.3s ease;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -40,21 +22,12 @@
 }
 html {
   scroll-behavior: smooth;
+}
+html.dark {
   color-scheme: dark;
 }
 body {
   font-family: "Roboto";
-}
-
-a {
-  text-decoration: none;
-}
-li {
-  list-style: none;
-}
-img {
-  object-fit: cover;
-  object-position: center;
 }
 button,
 input[type="submit"] {
@@ -64,21 +37,12 @@ input[type="submit"] {
   cursor: pointer;
   transition: var(--transition-3);
 }
-a,
-li,
-img,
 button {
   user-select: none;
 }
-
-button:hover,
-input[type="submit"]:hover {
+button:hover {
   scale: 0.99;
 }
-
-/* ====== Components ====== */
-
-/* ===== Header ======*/
 header {
   gap: 12px;
   padding: 32px;
@@ -96,7 +60,6 @@ header p {
   font-size: 24px;
   font-weight: 500;
 }
-
 main {
   padding: 0 66px;
   display: flex;
@@ -148,7 +111,11 @@ main .filter button {
   background-color: var(--primary-color);
   border: none;
 }
-
+main .input button {
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+  display: none;
+}
 main .filter {
   flex-direction: row;
   flex-wrap: wrap;
@@ -168,7 +135,7 @@ main .output {
 main .output tr th {
   padding: 4px 8px 8px;
   border-bottom: 1px solid var(--secondary-color);
-  font-size: 16px;
+  font-size: 20px;
   user-select: none;
 }
 main .output tr th:nth-child(4) {
@@ -185,10 +152,9 @@ main .output tr th:last-child {
 }
 main .output td {
   padding: 4px 8px 8px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
 }
-
 main .output tbody tr td:nth-child(4) {
   color: var(--warning-color);
   cursor: default;
@@ -196,7 +162,7 @@ main .output tbody tr td:nth-child(4) {
 main .output tbody tr td:nth-child(6),
 main .output tbody tr td:last-child {
   padding: 0px 18px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   transition: var(--transition-3);
   user-select: none;
@@ -209,39 +175,20 @@ main .output tbody tr td:last-child {
   border: 1px solid var(--danger-color);
   color: var(--danger-color);
 }
-
 main .output tbody tr td:nth-child(6):hover {
   background-color: var(--success-color);
   color: var(--white-color);
 }
-main .output tbody tr td:last-child:hover {
+main .output tbody tr td:last-child:hover,
+main .input button:hover {
   background-color: var(--danger-color);
   color: var(--white-color);
 }
-/* Media */
-/* ====== Media-min ====== */
-@media (min-width: 475px) {
-}
-@media (min-width: 640px) {
-}
-@media (min-width: 768px) {
-}
-@media (min-width: 1024px) {
-}
-@media (min-width: 1280px) {
-}
-
-/* ====== Media-max ====== */
-@media (max-width: 1279px) {
-}
-@media (max-width: 1023px) {
-}
-@media (max-width: 767px) {
+@media (max-width: 810px) {
   main .input input[type="submit"],
   main .filter button {
     font-size: 14px;
   }
-
   main .output tr th {
     padding: 2px 4px 4px;
     font-size: 14px;
@@ -254,8 +201,4 @@ main .output tbody tr td:last-child:hover {
     padding: 3px 6px;
     font-size: 12px;
   }
-}
-@media (max-width: 639px) {
-}
-@media (max-width: 474px) {
 }
